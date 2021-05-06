@@ -1,0 +1,15 @@
+CREATE DATABASE lista_contactos;
+USE lista_contactos;
+CREATE TABLE contactos(
+    id INT(11) NOT NULL AUTO_INCREMENT,
+    names VARCHAR(60) NOT NULL,
+    lastname VARCHAR(60) NOT NULL,
+    phone VARCHAR(20) NOT NULL,
+    PRIMARY KEY (id)
+);
+
+INSERT INTO contactos(names, lastname, phone)
+VALUE('Pablo', 'The Test', '04266031413');
+
+INSERT INTO contactos(names, lastname, phone)
+VALUE('Diego', 'Pionero', '4246303881');

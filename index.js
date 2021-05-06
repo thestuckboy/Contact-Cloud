@@ -1,22 +1,19 @@
 const express = require('express');
 const mysql = require('mysql');
+const bodyParser = require('body-parser');
+const configSQL = require('./modules/mysql.config');
 
 
 //MYSQL CONNECTION
 
-const connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '15112705',
-    database: 'personas'
-});
+const connection = mysql.createConnection(configSQL);
 
 connection.connect(()=>{
     console.log('Connected to DB');
 });
 
 function dbData(callback){
-    connection.query('SELECT * FROM clientes', (error, results, fields)=>{
+    connection.query('SELECT * FROM contactos', (error, results, fields)=>{
         if (error) throw error;
         callback(results);
     });
@@ -30,6 +27,8 @@ app = express();
 // CONFIGURATION
 
 app.set('view engine', 'ejs');
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 app.use(express.static('public'));
 
 //ROUTES
@@ -43,11 +42,26 @@ app.get('/create', (req, res)=>{
     res.render('create');
 });
 
-
 app.get('/contacts', (req, res)=>{
     dbData(data => {
-        console.log(data);
         res.render('contacts', {data: data});
+    });
+});
+
+app.get('/create/submited', (req, res)=>{
+    res.send('Submited!');
+});
+
+app.post('/create/submit',  (req, res)=>{
+    let name = req.body.name;
+    let lastname = req.body.lastname;
+    let number = req.body.numberp;
+
+    let query = `INSERT INTO contactos(names, lastname, phone) VALUE('${name}', '${lastname}', '${number}')`;
+    connection.query(query, (error)=>{
+        if (error) throw error;
+        console.log('Data received');
+        res.redirect('/create/submited');
     });
 });
 
