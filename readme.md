@@ -1,6 +1,14 @@
 # Version 0.10
 
-## Contact Cloud, a service where you can locate all your contact info, such as name, lastname and number.
+## Contact Cloud, a service where you can locate all your contact info, such as **name**, **lastname** and **number**.
+
+![Home Page](https://i.imgur.com/QVTT5Ph.png)
+<hr>
+
+![Create Page](https://i.imgur.com/JlV0MBO.png)
+<hr>
+
+![Contacts Page](https://i.imgur.com/ZIAcP38.png)
 
 <hr>
 

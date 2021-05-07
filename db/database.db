@@ -9,7 +9,7 @@ CREATE TABLE contactos(
 );
 
 INSERT INTO contactos(names, lastname, phone)
-VALUE('Pablo', 'The Test', '04266031413');
+VALUE('Pablo', 'The Test', '4266031413');
 
 INSERT INTO contactos(names, lastname, phone)
-VALUE('Diego', 'Pionero', '4246303881');
+VALUE('George', 'Pionero', '4246303881');
