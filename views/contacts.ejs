@@ -30,11 +30,19 @@
                     </div>
                     <div class="contacts">
                         <% data.forEach((i) => { %>
-                            <div class="person-child text-center">
+                            <div class="person-child text-center" key="<%= i.id %>">
                                 <h1><%= i.names %></h1>
                                 <h4><%= i.lastname %></h3>
                                 <hr>
                                 <p><%= i.phone %></p>
+                                <div class="button-container">
+                                    <button class="edit">
+                                        <span class="bi bi-pencil"></span>
+                                    </button>
+                                    <button class="delete">
+                                        <span class="bi bi-trash"></span>
+                                    </button>
+                                </div>
                             </div>
                         <% });%>
                     </div>

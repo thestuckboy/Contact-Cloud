@@ -5,10 +5,6 @@
     margin-top: 20px;
 }
 
-.title {
-    margin-top: 20px;
-}
-
 .title p {
     color: white;
     font-size: 20px;
@@ -19,7 +15,6 @@
 }
 
 .main-content {
-    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -39,7 +34,7 @@
 }
 
 .contacts > div:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 .link {
@@ -62,4 +57,41 @@
     border-bottom: 1px solid white;
     background-color: rgb(40, 171, 95, 0);
     color:#ffffff
+}
+
+button {
+    border: none;
+    background-color: black;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.edit {
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: #28ab5f;
+    transition: color 0.2s, background-color 0.5s;
+}
+
+.edit:hover {
+    color: #000000;
+    background-color: #28ab5f;
+}
+
+.delete {
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    transition: color 0.2s, background-color 0.5s;
+    color:#fa3636;
+}
+
+.delete:hover {
+    color:#000000;
+    background-color: #fa3636;
 }

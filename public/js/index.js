@@ -62,3 +62,22 @@ ScrollReveal().reveal('.main-content', {
     easing: 'ease-out',
     cleanup: true
 });
+
+document.querySelectorAll('.delete').forEach(item => {
+    item.addEventListener('click', (e) => {
+        //Getting Key attribute from button's 'grandfather' 
+        let parent = e.target.parentNode;
+        let contact = parent.parentNode;
+        contact = contact.parentNode;
+        let key = contact.getAttribute('key');
+
+        //Send 'Key' data to Server
+
+        const req = new XMLHttpRequest();
+
+        req.open('POST', '/delete');
+        req.setRequestHeader('Content-Type', "application/x-www-form-urlencoded");
+        req.send(`key=${key}`);
+        window.location.reload();
+    });
+  });

@@ -22,18 +22,18 @@
             <%- include ('partials/header') -%>
             <div class="background">
                 <div class="container d-flex justify-content-center">
-                    <form class="" action="/create/submit" method="POST">
+                    <form class="" action="/create" method="POST">
                         <div>
                             <label for="fname">Name</label>
-                            <input id="fname" name="name" class="input-e" type="text" autocomplete="off" required>
+                            <input id="fname" name="name" class="input-e" type="text" autocomplete="off" required minlength="3">
                         </div>
                         <div>
                             <label for="flastname">Lastname</label>
-                            <input id="flastname" name="lastname" class="input-e" type="text" autocomplete="off" required>
+                            <input id="flastname" name="lastname" class="input-e" type="text" autocomplete="off" required minlength="3">
                         </div>
                         <div>
                             <label for="fnumberf">Number Phone</label>
-                            <input id="fnumberf" name="numberp" class="input-e" type="text" autocomplete="off" required>
+                            <input id="fnumberf" name="numberp" class="input-e" type="text" autocomplete="off" required maxlength="20">
                         </div>
                         <div>
                             <input type="submit">

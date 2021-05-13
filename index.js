@@ -49,10 +49,10 @@ app.get('/contacts', (req, res)=>{
 });
 
 app.get('/create/submited', (req, res)=>{
-    res.send('Submited!');
+    res.render('submited');
 });
 
-app.post('/create/submit',  (req, res)=>{
+app.post('/create',  (req, res)=>{
     let name = req.body.name;
     let lastname = req.body.lastname;
     let number = req.body.numberp;
@@ -62,6 +62,15 @@ app.post('/create/submit',  (req, res)=>{
         if (error) throw error;
         console.log('Data received');
         res.redirect('/create/submited');
+    });
+});
+
+app.post('/delete', (req, res)=>{
+    let key = req.body.key;
+    let query = `DELETE FROM contactos WHERE id = ${key}`;
+    connection.query(query, (error)=>{
+        if (error) throw error;
+        console.log(`Row with id: ${key} has been deleted succesfully`);
     });
 });
 
