@@ -68,7 +68,6 @@ document.querySelectorAll('.delete').forEach(item => {
         //Getting Key attribute from button's 'grandfather' 
         let parent = e.target.parentNode;
         let contact = parent.parentNode;
-        contact = contact.parentNode;
         let key = contact.getAttribute('key');
 
         //Send 'Key' data to Server

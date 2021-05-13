@@ -64,6 +64,10 @@ button {
     background-color: black;
 }
 
+span {
+    pointer-events: none;
+}
+
 .button-container {
     display: flex;
     justify-content: center;
