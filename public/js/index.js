@@ -11,8 +11,25 @@ else if (title.innerHTML == "Contact Cloud - Create"){
 }
 else if (title.innerHTML == "Contact Cloud"){
     home.classList.toggle('active');
-}else {
+}
+else {
     console.error(`Couldn't toggle 'active' class. (See from line 6 to 16)`);
+}
+
+function checkcontacts (){
+    const divContact = document.getElementById('contact-container');
+
+    if (divContact.innerText == ""){
+    divContact.innerHTML = 
+    `
+    <div class="text-center" key="<%= i.id %>">
+        <h1>Can't find any contact &#x1F50D</h1>
+        <h4><a href="/create" class="click-here">Create one</a></h3>
+    </div>
+    `
+
+}
+
 }
 
 ScrollReveal().reveal('.main-container', {
@@ -74,9 +91,10 @@ document.querySelectorAll('.delete').forEach(item => {
 
         const req = new XMLHttpRequest();
 
-        req.open('POST', '/delete');
+        req.open('DELETE', '/delete');
         req.setRequestHeader('Content-Type', "application/x-www-form-urlencoded");
         req.send(`key=${key}`);
-        window.location.reload();
+        contact.parentNode.removeChild(contact);
+        checkcontacts();
     });
   });

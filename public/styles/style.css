@@ -9,12 +9,30 @@
     box-sizing: border-box;
 }
 
+*::selection {
+    color:black;
+    background-color: #28ab5f;
+    padding: 10px;
+}
+
 .active{
     color:#28ab5f;
 }
 
 body {
     background-color: black;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-center {
+    justify-content: center;
+}
+
+.flex-align-center {
+    align-items: center;
 }
 
 /*-----------------Home page-----------------*/

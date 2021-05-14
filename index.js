@@ -1,7 +1,9 @@
 const express = require('express');
 const mysql = require('mysql');
 const bodyParser = require('body-parser');
+const morgan = require('morgan');
 const configSQL = require('./modules/mysql.config');
+const port = 8000
 
 
 //MYSQL CONNECTION
@@ -30,6 +32,7 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(express.static('public'));
+app.use(morgan('short'));
 
 //ROUTES
 
@@ -60,12 +63,11 @@ app.post('/create',  (req, res)=>{
     let query = `INSERT INTO contactos(names, lastname, phone) VALUE('${name}', '${lastname}', '${number}')`;
     connection.query(query, (error)=>{
         if (error) throw error;
-        console.log('Data received');
         res.redirect('/create/submited');
     });
 });
 
-app.post('/delete', (req, res)=>{
+app.delete('/delete', (req, res)=>{
     let key = req.body.key;
     let query = `DELETE FROM contactos WHERE id = ${key}`;
     connection.query(query, (error)=>{
@@ -76,6 +78,6 @@ app.post('/delete', (req, res)=>{
 
 //SERVER INITIALIZATION
 
-app.listen(3000, ()=>{
-    console.log('Server on port: 3000');
+app.listen(port, ()=>{
+    console.log(`Server on: http://localhost:${port}/`);
 });

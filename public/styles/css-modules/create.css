@@ -17,7 +17,7 @@ form > div {
     margin-top: 20px;
 }
 
-form input[type="submit"] {
+form input[type="button"] {
     width: 100%;
     border: none;
     background-color: #28ab5f;
@@ -28,7 +28,7 @@ form input[type="submit"] {
     transition: background-color 0.5s, color 0.2s, outline 0.5s;
 }
 
-form input[type="submit"]:hover {
+form input[type="button"]:hover {
     background-color: black;
     color: #28ab5f;
     outline: #28ab5f solid 1px;
@@ -56,4 +56,22 @@ form input[type="submit"]:hover {
 
 .input-e::placeholder {
     color:black;
+}
+
+.invalid {
+    color: red;
+    display: flex;
+    justify-content: center;
+    border: red 1px solid;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.valid {
+    color: #55ff33;
+    display: flex;
+    justify-content: center;
+    border: #55ff33 1px solid;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }

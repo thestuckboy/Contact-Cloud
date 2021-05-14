@@ -1,4 +1,4 @@
-# Version 0.10
+# Version 0.12
 
 ## Contact Cloud, a service where you can locate all your contact info, such as **name**, **lastname** and **number**.
 
@@ -11,6 +11,19 @@
 ![Contacts Page](https://i.imgur.com/ZIAcP38.png)
 
 <hr>
+
+## New things:
+
+* Improvements in 'create' and 'contacts' routes
+    * Now if there is not contact, it'll show an advice.
+    * Now there is form validation of 'create' route's form.
+
+        * The data is sended via ```XMLHttpRequest``` Web API (see ```/js/create.js``` || line ```7```)
+    
+    <hr>
+
+    * Delete button now working. Solved some bugs about this one.
+    * Minimal changes in ```index.js``` (node)
 
 ### **Technologies used in this project**:
 

@@ -99,3 +99,12 @@ span {
     color:#000000;
     background-color: #fa3636;
 }
+
+.click-here {
+    color: white;
+    transition: color 0.5s;
+}
+
+.click-here:hover {
+    color: #28ab5f;
+}
