@@ -18,6 +18,23 @@
     <script src="https://unpkg.com/scrollreveal"></script>
 </head>
     <body>
+        <div class="model d-flex justify-content-center align-items-center">
+            <form>
+                <div class="d-flex justify-content-center">
+                    <h1>Edit</h1>
+                </div>
+                <label>New name:</label>
+                <input type="text" placeholder="Pablo" id="newName">
+                <label>New lastname:</label>
+                <input type="text" placeholder="Bueno" id="newLastName">
+                <label>New Phone:</label>
+                <input type="text" placeholder="000-000-0000" id="newPhoneNumber">
+                <div class="d-flex">
+                    <input type="button" value="Update" id="update">
+                    <input type="button" value="Leave" id="leave">
+                </div>
+            </form>
+        </div>
         <%- include ('partials/header') -%>
         <div class="container">
             <div class="main-content">

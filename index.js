@@ -3,7 +3,7 @@ const mysql = require('mysql');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const configSQL = require('./modules/mysql.config');
-const port = 8000
+const port = 3000;
 
 
 //MYSQL CONNECTION
@@ -16,7 +16,7 @@ connection.connect(()=>{
 
 function dbData(callback){
     connection.query('SELECT * FROM contactos', (error, results, fields)=>{
-        if (error) throw error;
+        if (error) console.log(error);
         callback(results);
     });
 }
@@ -64,6 +64,19 @@ app.post('/create',  (req, res)=>{
     connection.query(query, (error)=>{
         if (error) throw error;
         res.redirect('/create/submited');
+    });
+});
+
+app.post('/contacts', (req, res)=>{
+    let newName = req.body.newName;
+    let newLastName = req.body.newLastName;
+    let newPhoneNumber = req.body.newPhoneNumber;
+    let id = req.body.key;
+
+    let query = `UPDATE contactos SET names = '${newName}', lastname = '${newLastName}', phone = '${newPhoneNumber}' WHERE id = ${id}`;
+    connection.query(query, (error)=>{
+        if (error) throw error;
+        console.log(`Row with id ${id} updated succesfully`);
     });
 });
 

@@ -60,7 +60,7 @@ ScrollReveal().reveal('.div-presentation', {
 
 /*Create*/
 
-ScrollReveal().reveal('form', {
+ScrollReveal().reveal('.form-upload', {
     delay: 1500,
     duration: 2000,
     origin: 'left',
@@ -79,22 +79,3 @@ ScrollReveal().reveal('.main-content', {
     easing: 'ease-out',
     cleanup: true
 });
-
-document.querySelectorAll('.delete').forEach(item => {
-    item.addEventListener('click', (e) => {
-        //Getting Key attribute from button's 'grandfather' 
-        let parent = e.target.parentNode;
-        let contact = parent.parentNode;
-        let key = contact.getAttribute('key');
-
-        //Send 'Key' data to Server
-
-        const req = new XMLHttpRequest();
-
-        req.open('DELETE', '/delete');
-        req.setRequestHeader('Content-Type', "application/x-www-form-urlencoded");
-        req.send(`key=${key}`);
-        contact.parentNode.removeChild(contact);
-        checkcontacts();
-    });
-  });

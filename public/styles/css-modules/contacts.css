@@ -1,3 +1,44 @@
+.model {
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 3000;
+    transform: translateY(-100%);
+}
+
+.quit-model {
+    color: #fa3636;
+    font-size: 40px;
+    position:absolute;
+}
+
+.model form {
+    border: solid #fff 2px;
+    background-color: #000000;
+    padding: 30px;
+}
+
+.model input {
+    height: 50px;
+    border:none;
+    color: #fff;
+    outline: none;
+    background-color: #000000;
+    transition: outline 0.5s;
+}
+
+.model input[type=text]:focus {
+    color: #28ab5f;
+    outline: 1px #28ab5f solid;
+}
+
+.model h1 {
+    color: #28ab5f;
+}
+
 .contacts {
     display: flex;
     flex-wrap: wrap;
@@ -107,4 +148,24 @@ span {
 
 .click-here:hover {
     color: #28ab5f;
+}
+
+@keyframes pop-up {
+    0% {
+        transform: translateY(-100%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes pop-leave {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-100%);
+    }
 }
